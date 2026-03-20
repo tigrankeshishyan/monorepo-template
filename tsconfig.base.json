@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "useDefineForClassFields": true,
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "skipDefaultLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "moduleResolution": "node",
+    "typeRoots": ["./node_modules/@types", "./@types"],
+    "baseUrl": ".",
+    "paths": {
+      "@app/shared-types": ["packages/shared/types/src"],
+      "@app/shared-utils": ["packages/shared/utils/src"],
+      "@app/shared-db": ["packages/shared/db/src"],
+      "@app/server": ["packages/server/src"]
+    },
+    "noEmit": true,
+    "declaration": false,
+    "declarationMap": false,
+    "sourceMap": false,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false
+  },
+  "include": [],
+  "exclude": ["node_modules", "dist", "**/dist", "**/*.spec.ts", "**/*.test.ts"],
+  "references": [
+    { "path": "packages/shared/types" },
+    { "path": "packages/shared/utils" },
+    { "path": "packages/shared/db" },
+    { "path": "packages/server" },
+    { "path": "packages/clients/web-vite" },
+    { "path": "packages/clients/web-next" }
+  ]
+}

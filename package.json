@@ -1,0 +1,35 @@
+{
+  "name": "app",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=10"
+  },
+  "scripts": {
+    "type-check": "tsc -b tsconfig.base.json --noEmit",
+    "type-check:all": "pnpm -r --if-present run type-check",
+    "lint": "eslint \"packages/**/*.{ts,tsx}\" --max-warnings 0",
+    "lint:fix": "eslint \"packages/**/*.{ts,tsx}\" --fix",
+    "format": "prettier --write \"packages/**/*.{ts,tsx,json,md}\"",
+    "format:check": "prettier --check \"packages/**/*.{ts,tsx,json,md}\"",
+    "check:all": "pnpm format && pnpm lint:fix && pnpm type-check:all && pnpm build:all",
+    "build:all": "pnpm -r --if-present run build",
+    "dev:full": "concurrently \"pnpm --filter @app/server dev\" \"pnpm --filter @app/web dev\" --names 'SERVER,WEB' --prefix '[{name}]' --prefix-colors 'blue,cyan'",
+    "dev": "pnpm dev:full",
+    "clean": "pnpm -r exec rm -rf dist node_modules && rm -rf node_modules",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.13.2",
+    "@typescript-eslint/parser": "^6.13.2",
+    "concurrently": "^8.2.0",
+    "eslint": "^8.55.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import": "^2.29.0",
+    "husky": "^9.1.7",
+    "prettier": "^3.1.0",
+    "typescript": "^5.3.3"
+  }
+}

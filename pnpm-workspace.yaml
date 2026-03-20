@@ -1,0 +1,9 @@
+packages:
+  - 'packages/shared/types'
+  - 'packages/shared/utils'
+  - 'packages/shared/db'
+  - 'packages/server'
+  - 'packages/clients/web-vite'
+  - 'packages/clients/web-next'
+
+shared-workspace-lockfile: true

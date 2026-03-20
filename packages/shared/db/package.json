@@ -1,0 +1,29 @@
+{
+  "name": "@app/shared-db",
+  "version": "0.1.0",
+  "description": "Supabase client, DatabaseManager, auth utilities, and typed DB helpers",
+  "type": "module",
+  "main": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "files": ["dist", "src"],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint src --ext .ts",
+    "format": "prettier --write src"
+  },
+  "dependencies": {
+    "@app/shared-types": "workspace:*",
+    "@app/shared-utils": "workspace:*",
+    "@supabase/supabase-js": "^2.38.0",
+    "jsonwebtoken": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.3.3"
+  }
+}
