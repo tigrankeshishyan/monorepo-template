@@ -20,3 +20,9 @@ body {
   background-color: theme("colors.surface.muted");
   color: theme("colors.text.DEFAULT");
 }
+
+@layer components {
+  .modal-panel {
+    @apply rounded-2xl border border-surface-border bg-surface shadow-modal;
+  }
+}
