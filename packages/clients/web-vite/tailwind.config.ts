@@ -31,8 +31,7 @@ export default {
         },
       },
       boxShadow: {
-        modal:
-          "0 24px 64px -24px rgba(15, 23, 42, 0.32), 0 18px 32px -24px rgba(15, 23, 42, 0.22)",
+        modal: "0 24px 64px -24px rgba(15, 23, 42, 0.32), 0 18px 32px -24px rgba(15, 23, 42, 0.22)",
       },
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],

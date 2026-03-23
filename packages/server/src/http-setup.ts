@@ -36,7 +36,8 @@ export function createHttpApp(): Express {
   app.use("/auth", authRouter);
 
   // ─── 404 handler ──────────────────────────────────────────────────────────────
-  app.use((_req, res) => {
+  app.use((req, res) => {
+    void req;
     res.status(404).json({ error: "Not found" });
   });
 

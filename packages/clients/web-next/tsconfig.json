@@ -5,7 +5,14 @@
     "jsx": "preserve",
     "incremental": true,
     "plugins": [{ "name": "next" }],
-    "types": ["node"]
+    "types": ["node"],
+    "allowJs": true
   },
-  "include": ["src", "next.config.mjs", "next-env.d.ts"]
+  "include": [
+    "src",
+    "next.config.mjs",
+    "next-env.d.ts",
+    "tailwind.config.ts",
+    ".next/types/**/*.ts"
+  ]
 }
