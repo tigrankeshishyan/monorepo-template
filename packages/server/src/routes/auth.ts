@@ -73,7 +73,8 @@ authRouter.get("/me", requireAuth, async (req: Request, res: Response): Promise<
 
 // ─── POST /auth/logout ────────────────────────────────────────────────────────
 
-authRouter.post("/logout", (_req: Request, res: Response): void => {
+authRouter.post("/logout", (req: Request, res: Response): void => {
+  void req;
   // JWT is stateless — client is responsible for discarding the token.
   // TODO: If you add a token blocklist/Redis store for revocation, clear it here.
   res.json({ message: "Logged out" });

@@ -7,9 +7,7 @@ import type { AuthSession, JwtPayload } from "./types";
 function getJwtSecret(): string {
   const secret = process.env["JWT_SECRET"];
   if (!secret || secret.length < 32) {
-    throw new Error(
-      "[shared-db/auth] JWT_SECRET must be set and at least 32 characters long",
-    );
+    throw new Error("[shared-db/auth] JWT_SECRET must be set and at least 32 characters long");
   }
   return secret;
 }
@@ -22,7 +20,9 @@ export function verifyToken(token: string): JwtPayload {
   try {
     return jwt.verify(token, getJwtSecret()) as JwtPayload;
   } catch (err) {
-    throw new Error(`Invalid or expired token: ${err instanceof Error ? err.message : String(err)}`);
+    throw new Error(
+      `Invalid or expired token: ${err instanceof Error ? err.message : String(err)}`,
+    );
   }
 }
 

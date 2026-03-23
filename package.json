@@ -16,7 +16,7 @@
     "format:check": "prettier --check \"packages/**/*.{ts,tsx,json,md}\"",
     "check:all": "pnpm format && pnpm lint:fix && pnpm type-check:all && pnpm build:all",
     "build:all": "pnpm -r --if-present run build",
-    "dev:full": "concurrently \"pnpm --filter @app/server dev\" \"pnpm --filter @app/web dev\" --names 'SERVER,WEB' --prefix '[{name}]' --prefix-colors 'blue,cyan'",
+    "dev:full": "concurrently \"pnpm --filter @app/server dev\" \"pnpm --filter @app/web-vite dev\" --names 'SERVER,WEB' --prefix '[{name}]' --prefix-colors 'blue,cyan'",
     "dev": "pnpm dev:full",
     "clean": "pnpm -r exec rm -rf dist node_modules && rm -rf node_modules",
     "prepare": "husky"
